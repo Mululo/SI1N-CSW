@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10</title>
+</head>
+<body>
+    <div style </div>
+    <h1>4 - FERRAMENTAS TIC UTILIZADAS NA BIBLIOTECA ANA BOVE<h1>
+    <h2> 4.1 - Sobre a Biblioteca Ana Bove e sua instituição mantenedora<h2>
+    <h3>4.1.1 - O lmip<h3>
+    <h3>4.1.2 - A Biblioteca Ana Bove<h3>
+    <h2>4.2 - Diagnóstico tecnológico da Biblioteca Ana BOVe<h2>
+    <h3>4.2.1 - Catálogo automático.<h3>
+    <h3>4.2.2 - Repositório institucional.<h3>
+    <h3>4.2.3 - Portal e/ou base de dados de informação científica.<h3>
+    <h4>4.24 - Website (site)<h4>
+    <h5>4.2.5 - Redes sociais.<h5>
+    <h6>4.2.6 - Outras ferramentas</h6>
+        <br>
+        <hr>
+        <p> Vamos a um exemplo, claro de <u>forma</u> e <b>semântica</b> </p>
+    <p>O professor Fabrício é um cara legal, ele nasceu na <i><u> R. José Romério Duque, 185 - Mantena,
+        MG, 35290-000 </i></u> no hospital Evangélico, e
+        ainda criança veio morar na <i><u> rua Santa
+        Luzia, 323 – Serra, ES</i></u>.</p>
+    <br
+    O professor Fabrício é um cara legal, ele nasceu na
+<i><address> R. José Romério Duque, 185 -
+Mantena, MG, 35290-000 </i></address> no
+hospital Evangélico, e ainda criança veio morar
+na <i><address> rua Santa Luzia, 323 – Serra,
+ES</i></address >.
+<br>
+<hr>
+<pre><code>
+   
+    elsius_para_fahrenheit(celsius):
+    # Fórmula para conversão de Celsius para Fahrenheit
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+
+# Solicita a temperatura em Celsius ao usuário
+temperatura_celsius = float(input("Digite a temperatura em Celsius: "))
+
+# Converte para Fahrenheit
+temperatura_fahrenheit = celsius_para_fahrenheit(temperatura_celsius)
+
+# Exibe o resultado
+print(f"A temperatura em Fahrenheit é: {temperatura_fahrenheit:.2f}°F")</pre></code>
+<hr>
+<pre><code>
+    Flappy Bird em Python
+import pygame
+import random
+
+# Inicialize o pygame
+pygame.init()
+
+# Configurações da tela
+SCREEN_WIDTH = 400
+SCREEN_HEIGHT = 600
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+BLUE = (135, 206, 250)
+PIPE_WIDTH = 70
+PIPE_HEIGHT = 500
+PIPE_GAP = 150
+BIRD_WIDTH = 30
+BIRD_HEIGHT = 30
+GRAVITY = 0.5
+LIFT = -10
+PIPE_SPEED = 3
+
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Flappy Bird')
+
+# Função para desenhar o pássaro
+def draw_bird(x, y):
+    pygame.draw.rect(screen, (255, 255, 0), (x, y, BIRD_WIDTH, BIRD_HEIGHT))
+
+# Função para desenhar os canos
+def draw_pipe(x, y, is_top):
+    pygame.draw.rect(screen, GREEN, (x, y, PIPE_WIDTH, PIPE_HEIGHT if is_top else SCREEN_HEIGHT - y))
+
+def main():
+    clock = pygame.time.Clock()
+    bird_x = 50
+    bird_y = SCREEN_HEIGHT // 2
+    bird_velocity = 0
+    
+    pipe_x = SCREEN_WIDTH
+    pipe_y = random.randint(100, SCREEN_HEIGHT - PIPE_GAP - 100)
+    
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                bird_velocity = LIFT
+        
+        # Movimentação do pássaro
+        bird_velocity += GRAVITY
+        bird_y += bird_velocity
+        
+        # Movimentação dos canos
+        pipe_x -= PIPE_SPEED
+        
+        # Resetar canos e posição
+        if pipe_x < -PIPE_WIDTH:
+            pipe_x = SCREEN_WIDTH
+            pipe_y = random.randint(100, SCREEN_HEIGHT - PIPE_GAP - 100)
+        
+        # Colisão com o chão ou o teto
+        if bird_y < 0 or bird_y + BIRD_HEIGHT > SCREEN_HEIGHT:
+            running = False
+        
+        # Colisão com os canos
+        if (pipe_x < bird_x + BIRD_WIDTH and pipe_x + PIPE_WIDTH > bird_x and
+            (bird_y < pipe_y or bird_y + BIRD_HEIGHT > pipe_y + PIPE_GAP)):
+            running = False
+        
+        # Limpeza da tela
+        screen.fill(BLUE)
+        
+        # Desenhar pássaro e canos
+        draw_bird(bird_x, bird_y)
+        draw_pipe(pipe_x, pipe_y - PIPE_HEIGHT, True)  # Canos de cima
+        draw_pipe(pipe_x, pipe_y + PIPE_GAP, False)  # Canos de baixo
+        
+        pygame.display.flip()
+        clock.tick(30)
+    
+    pygame.quit()
+
+if __name__ == "__main__":
+    main()</pre></code>
+
+    
+
+    
+</body>
+</html>
