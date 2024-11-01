@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* Links */
+h1{
+    color: deeppink;
+    font-weight: bold;
+}
+
+li{
+color: darkgreen;
+font-weight: bold;
+}
+
+li span{
+color: gray;
+font-weight: bold;
+}
+
+li a{
+    color: brown;
+    font-weight: bold;
+}
+
+/* link youtube */
+
+.interface{
+    color: black;
+}
+
+.interface a{
+    color: blue;
+}
+
+.interface span{
+    color: darkmagenta;
+}
+
+.texto span{
+    color: purple;
+    font-weight: bold;
+    font-size: 80px;
+}
